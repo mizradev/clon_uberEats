@@ -4,7 +4,8 @@
   "description": "Clon de la aplicacion de Uber Eats",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/soymizra/clon_uberEats/issues"
   },
-  "homepage": "https://github.com/soymizra/clon_uberEats#readme"
+  "homepage": "https://github.com/soymizra/clon_uberEats#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cloudinary": "^1.21.0",
+    "express": "^4.17.1",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
