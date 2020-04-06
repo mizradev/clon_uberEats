@@ -18,6 +18,10 @@ const typeDefs = `
     type Mutation{
         createUser(name:String!,age:Int!): User!
         deleteUser(id: ID!): String!
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     }
     type User{
         id:Int!
@@ -38,12 +42,12 @@ const resolvers = {
         - Context: ${JSON.stringify(context)}
         - Info: ${JSON.stringify(info)}
         `,
-        getUsers: (root, params, context, info) => {return users},
-        getUser: (root, {id}, context, info) => users.find(u => u.id == id),
+        getUsers: () => users,
+        getUser: ( {id}) => users.find(u => u.id == id),
     },
 
     Mutation:{
-        createUser: (_, { name,  age}, context, info) => {
+        createUser: (_, { name,  age}) => {
             let user = {
                 id: users.length + 123214,
                 name,
@@ -52,7 +56,7 @@ const resolvers = {
             users.push(user);
             return user;
         },
-        deleteUser: (_, { id }, context, info) => {
+        deleteUser: (_, { id }) => {
             let indexUserToDelete = users.findIndex(user =>  user.id === id);
             users.splice(indexUserToDelete, 1);
             return `Usuario con ID: ${id} Eliminado Exitosamente`;
